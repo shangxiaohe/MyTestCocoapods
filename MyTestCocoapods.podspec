@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
   # s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "9.0"
+  s.ios.deployment_target = "9.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -92,8 +92,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "TestProject/TestProject/*.{h,m}"
-  s.exclude_files = "TestProject/TestProject"
+  s.source_files  = 'MyTestCocoapods', 'TestProject/**/*.{h,m}'
+  # s.exclude_files = "TestProject/TestProject"
 
   # s.public_header_files = "TestProject/**/*.h"
 
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "UIKit.framework"
-  # s.frameworks = "UIKit.framework", "libPods-TestProject.a"
+  s.frameworks = "UIKit", "libPods-TestProject"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
@@ -134,6 +134,7 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.dependency "SDWebImage", "~> 4.0"
+  s.dependency "MBProgressHUD", "~> 1.1"
 
 end

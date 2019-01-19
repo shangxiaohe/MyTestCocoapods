@@ -52,7 +52,7 @@
     
     NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];
     
-    NSArray *array = [dic1 allKeys];
+//    NSArray *array = [dic1 allKeys];
     
     NSLog(@"ddd");
     

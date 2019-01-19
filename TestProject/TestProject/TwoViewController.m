@@ -37,7 +37,6 @@
     
     
     dispatch_queue_t queue = dispatch_queue_create("aaa", DISPATCH_QUEUE_SERIAL);
-    dispatch_queue_t queue_t = dispatch_queue_create("aaa", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(queue, ^{
         NSLog(@"[cloud] 1  %@",[NSThread currentThread]);
@@ -72,10 +71,10 @@
     NSLog(@"aa = %@ , bb = %@",aa,bb);
     
     
-    CGFloat b = 1.625;
+//    CGFloat b = 1.625;
     
 
-    NSString *d = [NSString stringWithFormat:@"%.2f",round(b * 100)/100];
+//    NSString *d = [NSString stringWithFormat:@"%.2f",round(b * 100)/100];
     
     
     CGFloat effectOffset = 10.f;

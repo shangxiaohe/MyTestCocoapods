@@ -92,10 +92,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "TestProject/TestProject"
+  s.source_files  = "TestProject/**/*.{h,m}"
   s.exclude_files = "TestProject/TestProject"
 
-  # s.public_header_files = "TestProject/TestProject/*.h"
+  # s.public_header_files = "TestProject/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "UIKit.framework"
-  # s.frameworks = "UIKit.framework", "libPods-TestProject.a"
+  # s.frameworks = "UIKit.framework", "libPods-TestProject.a", "XCTest.framework"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"

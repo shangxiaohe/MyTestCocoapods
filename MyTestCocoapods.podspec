@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "UIKit.framework"
-  # s.frameworks = "UIKit.framework", "libPods-TestProject.a", "XCTest.framework"
+  # s.frameworks = "UIKit.framework", "libPods-TestProject.a"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"

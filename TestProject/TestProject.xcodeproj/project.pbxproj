@@ -23,8 +23,6 @@
 		73DED5D2213E15630014BEF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73DED5D1213E15630014BEF7 /* Assets.xcassets */; };
 		73DED5D5213E15630014BEF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73DED5D3213E15630014BEF7 /* LaunchScreen.storyboard */; };
 		73DED5D8213E15630014BEF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DED5D7213E15630014BEF7 /* main.m */; };
-		73DED5E2213E15630014BEF7 /* TestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DED5E1213E15630014BEF7 /* TestProjectTests.m */; };
-		73DED5ED213E15630014BEF7 /* TestProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DED5EC213E15630014BEF7 /* TestProjectUITests.m */; };
 		AE3FA4B42842F376AF7D1575 /* libPods-TestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0F53205F9A631A9398010D /* libPods-TestProject.a */; };
 /* End PBXBuildFile section */
 
@@ -77,10 +75,8 @@
 		73DED5D6213E15630014BEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73DED5D7213E15630014BEF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73DED5DD213E15630014BEF7 /* TestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73DED5E1213E15630014BEF7 /* TestProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTests.m; sourceTree = "<group>"; };
 		73DED5E3213E15630014BEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73DED5E8213E15630014BEF7 /* TestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73DED5EC213E15630014BEF7 /* TestProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUITests.m; sourceTree = "<group>"; };
 		73DED5EE213E15630014BEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F99E12DFD81C994430DAF1DB /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,7 +175,6 @@
 		73DED5E0213E15630014BEF7 /* TestProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				73DED5E1213E15630014BEF7 /* TestProjectTests.m */,
 				73DED5E3213E15630014BEF7 /* Info.plist */,
 			);
 			path = TestProjectTests;
@@ -188,7 +183,6 @@
 		73DED5EB213E15630014BEF7 /* TestProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
-				73DED5EC213E15630014BEF7 /* TestProjectUITests.m */,
 				73DED5EE213E15630014BEF7 /* Info.plist */,
 			);
 			path = TestProjectUITests;
@@ -374,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73DED5E2213E15630014BEF7 /* TestProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73DED5ED213E15630014BEF7 /* TestProjectUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

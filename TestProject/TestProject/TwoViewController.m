@@ -69,12 +69,9 @@
     NSString *bb = STRING_NULL(aa);
     
     NSLog(@"aa = %@ , bb = %@",aa,bb);
-    
-    
-//    CGFloat b = 1.625;
+
     
 
-//    NSString *d = [NSString stringWithFormat:@"%.2f",round(b * 100)/100];
     
     
     CGFloat effectOffset = 10.f;

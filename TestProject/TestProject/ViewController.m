@@ -50,9 +50,6 @@
         NSLog(@"ddd");
     }
     
-    NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];
-    
-//    NSArray *array = [dic1 allKeys];
     
     NSLog(@"ddd");
     

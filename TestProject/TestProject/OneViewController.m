@@ -50,7 +50,6 @@
     
 //    [self thread];
     
-//    UIImage *image = [UIImage imageNamed:@"111.jpg"];
     
     
 }

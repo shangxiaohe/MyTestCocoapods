@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>记录详情</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font_204671_19b2d7ji42aqncdi/iconfont.css"/>
+</head>
+<body>
+	<div id="main">
+		<header>
+			<i onClick="back();" class="iconfont icon-arrow-left"></i>记录详情
+		</header>
+		<section id="container">
+			<div id="all" class="payment_detail container_wrapper">
+			</div>
+		</section>
+	</div>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/public.js"></script>
+<script>
+
+function back(){
+window.history.go(-1);
+}
+
+$(document).ready(function(e) {
+$.ajaxSetup({ 
+    async : false 
+});   
+     var id=GetQueryString("id");//获取id的值
+	 var url=getDonmin()+"paymentRecordsController.do?queyPayInfo"+"&id="+id;
+	 $.get(url,function(data){
+		 var json=getjson(data);//由于返回的内容为字符串,所以需要转换为json对象才可以读取内容
+			if(json.state=="1"){//如果返回的对象state为1,则打印后台提示
+				alert(json.message);
+				}else{
+					var detail_info = "";//总数据拼接容器
+		            var blist = "";//子列表容器
+					//是否缴费
+					if(json.result.paymentStatus == 0){//未缴费
+					    detail_info = '<p class="payment_detail_state">未缴费</p>'
+					}
+					else
+					{
+						detail_info = '<p class="payment_detail_state">已缴费</p>'
+					}
+					//单号，名称拼接
+					detail_info += '<div class="payment_detail_card"><div class="payment_card_header"><p class="payment_search_number"><i class="iconfont wendangshuoming"></i>' + json.result.orderNumber + '</p></div><div class="payment_card_container"><p class="payment_card_name"><span>' + json.result.busiitemName + '</span></p><div class="payment_card_detail">';
+					//循环并拼接子项目
+		 var sp=json.result.subprojectCharge.split("|");
+		 $.each(sp,function(result,info)
+		 {
+		 var spinfo=info.split(",");
+		 if(spinfo[2]!=null&&spinfo[3]!=null){
+		blist += '<p><span>'+spinfo[2]+'</span><i>¥ '+spinfo[3]+'</i></p>'
+		}
+		 });
+		 detail_info +=blist;
+		 //拼接总金额,缴费时间
+		 detail_info += '<p><span>总计应收</span><i>¥ ' + json.result.money + '</i></p><p class="payment_card_time"><span>缴费时间</span><i>  2018-01-01  16:00</i></p></div></div></div>';
+		 
+		 $("#all").html(detail_info);
+				}
+	 });
+  
+})
+</script>
+</html>

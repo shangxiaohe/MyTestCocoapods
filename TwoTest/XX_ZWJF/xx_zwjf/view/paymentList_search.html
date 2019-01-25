@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>缴费记录查询</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font_204671_19b2d7ji42aqncdi/iconfont.css"/>
+</head>
+<body>
+	<div id="main">
+		<header>
+			<i onClick="back();" class="iconfont icon-arrow-left"></i>缴费记录查询
+		</header>
+		<section id="container">
+			<div class="paymentList_search container_wrapper">
+				<ul id="all" class="search_list">
+					<li>
+						<div class="search_list_header">
+							<p class="payment_search_number"><i class="iconfont wendangshuoming"></i>1234567890000000000</p>
+							<p class="payment_search_state">已缴费</p>
+						</div>
+						<div class="search_list_container">
+							<p class="payment_search_name"><span>这是事项名称，这是很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长长很长很长很长很长很长</span></p>
+							<div class="payment_search_detail">
+								<p><span>缴费金额</span><i>¥ 5.00</i></p>
+								<p><span>缴费时间</span><i>¥ 20.00</i></p>
+								<p class="amountTotal"><span>总计应收</span><i>¥ 25.00</i></p>
+							</div>
+						</div>
+						<div class="search_list_footer">
+							<a href="">查看详情</a>
+						</div>
+					</li>
+					<li>
+						<div class="search_list_header">
+							<p class="payment_search_number"><i class="iconfont wendangshuoming"></i>1234567890000000000</p>
+							<p class="payment_search_state">已缴费</p>
+						</div>
+						<div class="search_list_container">
+							<p class="payment_search_name"><span>这是事项名称，这是很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长长很长很长很长很长很长</span></p>
+							<div class="payment_search_detail">
+								<p><span>缴费金额</span><i>¥ 5.00</i></p>
+								<p><span>缴费时间</span><i>¥ 20.00</i></p>
+								<p class="amountTotal"><span>总计应收</span><i>¥ 25.00</i></p>
+							</div>
+						</div>
+						<div class="search_list_footer">
+							<a href="">查看详情</a>
+						</div>
+					</li>
+					<li>
+						<div class="search_list_header">
+							<p class="payment_search_number"><i class="iconfont wendangshuoming"></i>1234567890000000000</p>
+							<p class="payment_search_state">已缴费</p>
+						</div>
+						<div class="search_list_container">
+							<p class="payment_search_name"><span>这是事项名称，这是很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长长很长很长很长很长很长</span></p>
+							<div class="payment_search_detail">
+								<p><span>缴费金额</span><i>¥ 5.00</i></p>
+								<p><span>缴费时间</span><i>¥ 20.00</i></p>
+								<p class="amountTotal"><span>总计应收</span><i>¥ 25.00</i></p>
+							</div>
+						</div>
+						<div class="search_list_footer">
+							<a href="">查看详情</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/public.js"></script>
+<script>
+function back(){
+window.history.go(-1);
+}
+
+$(document).ready(function(e) {
+$.ajaxSetup({ 
+    async : false 
+}); 
+    var phone=GetQueryString("phone");//获取当前输入框中电话的值 
+	var url=getDonmin()+"paymentRecordsController.do?queyPayList&phone="+phone;
+	$.get(url,function(data){//访问成功则调用内部的值
+		var json = getjson(data);//由于返回的内容为字符串,所以需要转换为json对象才可以读取内容
+		if(json.state == "1"){//如果返回的对象state为-1,则打印后台提示
+			alert(json.message);
+		}
+		else{//如果返回的对象state不为-1,则绑定成功,打印后台提示并执行跳转页面操作
+			var searchlsit_info = "";//总数据拼接容器
+			var result = json.result;
+			$.each(result,function(index,info){
+				searchlsit_info += '<li><div class="search_list_header"><p class="payment_search_number"><i class="iconfont wendangshuoming"></i>' + info.orderNumber + '</p><p class="payment_search_state">已缴费</p></div><div class="search_list_container"><p class="payment_search_name"><span>' + info.busiitemName + '</span></p><div class="payment_search_detail"><p><span>缴费金额</span><i>¥ ' + info.money +'</i></p><p><span>缴费时间</span><i> ' + info.dayTime + '</i></p><p class="amountTotal"><span>总计应收</span><i>¥ ' + info.money + '</i></p></div></div><div class="search_list_footer"><a href="" onClick="detail(\'' + info.id + '\');return false;">查看详情</a></div></li>';
+			});
+			
+			//输出页面
+			$("#all").html(searchlsit_info);
+		}
+	});
+	
+})
+
+function detail(value){
+
+	window.location.href = 'paymentList_detail.html?id='+value;
+}
+</script>>
+</html>

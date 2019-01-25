@@ -1,0 +1,313 @@
+header{
+	width: 100%;
+	height: .88rem;
+	background-color: #000;
+	position: relative;
+	text-align: center;
+	color: white;
+	font-size: .34rem;
+	line-height: .88rem;
+	letter-spacing: 1px;
+}	
+header .icon-arrow-left{
+	position: absolute;
+	/*width: .3rem;*/
+	font-size: .3rem;
+	left: .2rem;
+	color: white;
+}
+header .icon-arrow-left:before{
+	content: "\e880返回";
+}	
+img{
+	width: 100%;
+}
+#container{
+	position: relative;
+}
+.container_wrapper{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	background-color: #2199ff;
+}
+
+/*状态页及首页*/
+.payment_home,.payment_result{
+	background-color: #fff;
+}
+.payment_header{
+	height: 5.1rem;
+	padding-left: .24rem;
+	padding-right: .24rem;
+	padding-top: .88rem;
+	overflow: hidden;
+	text-align: center;
+}
+.payment_header>.payment_header_nav{
+	width: 49%;
+	float: left;
+	margin-right: 2%;
+}
+.payment_header>a:last-child{
+	margin-right: 0;
+}
+.payment_stateImg{
+	height: 6.2rem;
+	position: absolute;
+	bottom: .7rem;
+}
+.payment_stateImg{
+	padding-left: .24rem;
+	padding-right: .24rem;
+	padding-top: .55rem;
+}
+.payment_stateImg>img{
+	width: 100%;
+}
+.payment_logo{
+	width: 100%;
+	height: .7rem;
+	position: absolute;
+	bottom: 0;
+	padding-left: .24rem;
+	padding-right: .24rem;
+	overflow: hidden;
+	/*background-color: #fff;*/
+	z-index: 3;
+}
+.logo_word{
+	width: 2.7rem;
+	float: left;
+}
+.logo_pic{
+	width: 2.7rem;
+	float: right;
+}
+
+/*缴费结果页*/
+.result_date{
+	font-size: .3rem;
+	margin-bottom: .36rem;
+}
+.result_amount{
+	font-size: .8rem;
+	margin-bottom: .7rem;
+}
+.result_state{
+	font-size: .26rem;
+}
+.result_state>.iconfont{
+	font-size: .4rem;	
+	margin-right: .08rem;
+}
+.result_state.success{
+	color: #2199ff;
+}
+.result_state.error{
+	color: #fa473a;
+}
+
+
+/*政务缴费登录页*/
+.payment_login,.paymentList_login{
+	background-repeat: no-repeat;
+	background-size: 2.52rem 2.46rem;
+	background-position-x: center;
+	background-position-Y: .78rem;
+}
+.payment_login{background-image: url(../images/back1_nav.png);}
+.paymentList_login{background-image: url(../images/back2_nav.png);}
+.login_module{
+	width: 6.9rem;
+	padding-left: .4rem;
+	padding-right: .4rem;
+	padding-top: .6rem;
+	padding-bottom: .8rem;
+	background-color: #fff;
+	margin: 0 auto;
+	border-radius: .2rem;
+	margin-top: 3rem;
+}
+.form_group{
+	font-size: 0;
+	height: 2.18rem;
+}
+.form_group label{
+	font-size: .28rem;
+	display: inline-block;
+	margin-bottom: .2rem;
+}
+.form_group input{
+	border:0.02rem solid #e4e4e4;
+	font-size: .34rem;
+	text-indent: .2rem;
+}
+.login_module input{
+	width: 100%;
+	outline: none;
+	border-radius: .1rem;
+	height: 1rem;
+}
+.login_module input[type="submit"]{
+	background-color: #2199ff;
+	color: #fff;
+	font-size: .4rem;
+	border: none;
+}
+.login_module input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cccccc;
+}
+.login_module input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cccccc;
+}
+.login_module input:-ms-input-placeholder{
+    color: #cccccc;
+}
+.login_module input::-webkit-input-placeholder{
+    color: #cccccc;
+}
+
+/*缴费记录*/	
+.payment_search,.paymentList_search{
+	padding: .24rem;
+}
+.search_list li{
+	width: 100%;
+	background-color: #fff;
+	border-radius: .2rem;
+	margin-top: .32rem;
+	font-size: .26rem;
+}
+.search_list_header,.payment_card_header,.payment_search_detail,.payment_card_detail{
+	padding-left: .3rem;
+	padding-right: .3rem;
+	padding-top: .24rem;
+	padding-bottom: .24rem;
+	overflow: hidden;
+}
+.wendangshuoming{
+	color: #2199ff;
+	margin-right: 0.1rem;
+}
+.payment_search_number{
+	float: left;
+}
+.payment_search_state{
+	float: right;
+	color: #2199ff;
+}
+.payment_search_name,.payment_card_name{
+	max-height: 1.6rem;
+	padding-left: .3rem;
+	padding-right: .3rem;
+	padding-top: .32rem;
+	padding-bottom: .32rem;
+	line-height: .4rem;
+	background-color: #f4f6f8;
+	font-size: .32rem;
+}
+.payment_search_name>span,.payment_card_name>span{
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.payment_search_detail>p,.payment_card_detail>p{
+	overflow: hidden;
+	margin-bottom: .12rem;
+}
+.payment_search_detail>p>span,.payment_card_detail>p>span{
+	float: left;
+	display: inline-block;
+	max-width: 4.5rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.payment_search_detail>p>i,.payment_card_detail>p>i{
+	float: right;
+	font-style: normal;
+}
+.payment_search_detail>p.amountTotal{
+	color: #2199ff;
+	margin-bottom: 0;
+}
+.search_list_footer{
+	text-align: right;
+	padding-top: .22rem;
+	padding-bottom: .22rem;
+	padding-left: .3rem;
+	padding-right: .3rem;
+	border-top: 0.02rem solid #cccccc;
+}
+.search_list_footer>a{
+	width: 1.6rem;
+	height: .6rem;
+	display: inline-block;
+	text-align: center;
+	line-height: .6rem;
+	border: 0.02rem solid #cccccc;
+	color: #999999;
+	border-radius: .05rem;
+}
+.search_list_footer>a.not_payment{
+	color: #fa473a;
+	border-color: #fa473a;
+}
+
+
+/*记录详情*/
+.payment_detail,.paymentList_detail{
+	background-color: #eff2f4;
+}
+.payment_detail_state{
+	width: 100%;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	background-color: #2199ff;
+	color: #fff;
+	font-size: .26rem;
+	text-indent: .6rem;
+	background-image: url(../images/back3_nav.png);
+	background-repeat: no-repeat;
+	background-size: 1.6rem 1.2rem;
+	background-position-x: 95%;
+	background-position-Y: -.04rem;
+}
+.payment_detail_state.not_payment{
+	background-color: #c4c4c4;
+	background-image: url(../images/back4_nav.png);
+}
+.payment_detail_card{
+	width: 100%;
+	background-color: #fff;
+	font-size: .26rem;
+	padding-bottom: 0;
+}
+.payment_card_detail{
+	padding-bottom: 0;
+}
+.payment_card_detail>p.payment_card_time{
+	margin-top: .32rem;
+	margin-bottom: 0;
+	padding-top: .22rem;
+	padding-bottom: .22rem;
+	padding-left: .3rem;
+	padding-right: .3rem;
+	border-top: 0.02rem solid #cccccc;
+}
+.payment_detail>input.submit{
+	display: block;
+    margin: 0 auto;
+    width: 6.1rem;
+    height: 1rem;
+    border-radius: 0.2rem;
+    background-color: #fa473a;
+    color: #fff;
+    font-size: .4rem;
+    border: none;
+    outline: none;
+    margin-top: .8rem;
+}

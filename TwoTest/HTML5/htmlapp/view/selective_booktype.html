@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>医生列表</title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/font_204671_x9apung3xuwyiudi/iconfont.css" />
+	<link rel="stylesheet" href="../css/layout.css" />
+</head>
+<body>
+	<header>
+		<a href="#" class="iconfont shangyi toPrevious"></a>
+		<h1>选择预约类型</h1>
+		<!--<a href="#" class="toNext">确定</a>-->
+	</header>
+	<section id="content" class="doctor-list">
+		<div class="wrapper listGroup">
+			<ul>
+				<li><a href="#" onClick="buttonpressed()"><span class="fr"><i class="iconfont gou"></i></span>当天挂号</a></li>
+				<li><a href="selective_doctor.html"><span class="fr"><i class="iconfont gou"></i></span>预约挂号</a></li>
+			</ul>
+			
+		</div>
+		<div class="iagree">
+			<div class="opt">
+				<input class="magic-checkbox" type="checkbox" name="layout" id="c2" checked>
+				<label for="c2">我已同意并阅读《<a href="#">挂号须知</a>》</label>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script>
+var idd;
+$(document).ready(function(e) {
+$.ajaxSetup({ 
+    async : false 
+});   
+     idd=GetQueryString("aaa");//获取id的值
+})
+
+
+function buttonpressed(){
+	alert('sdfghgfds');
+}
+</script>>
+</html>

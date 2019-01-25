@@ -1,0 +1,22 @@
+//
+//  TwoTest.pch
+//  TwoTest
+//
+//  Created by ren on 2018/3/23.
+//  Copyright © 2018年 ren. All rights reserved.
+//
+
+#ifndef TwoTest_pch
+#define TwoTest_pch
+
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#define app(name,name2) [NSString stringWithFormat:@"%@%@",name,name2]
+
+#define ASSCEE [NSString stringWithFormat:@"%@",@"AAAAA"]
+
+#define AABB app(@"ff",ASSCEE)
+
+#endif /* TwoTest_pch */

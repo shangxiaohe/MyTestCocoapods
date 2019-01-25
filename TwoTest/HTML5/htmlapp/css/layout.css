@@ -1,0 +1,357 @@
+/*共用*/
+body{font-size: 0.34rem;}
+header,#search{width:100%;padding: 0 .3rem;height: 0.88rem;line-height:0.88rem;background-color: #4468d0;color: #fff;position: fixed;z-index: 10;}
+header .toPrevious{float: left;position: absolute;left: 0.3rem;top: 0;}
+header .toNext{float: right;position: absolute;right: 0.3rem;top: 0;}
+header h1{text-align: center;font-size: 0.36rem;width: 100%;}
+#content,#content-special{width:100%;overflow:hidden;position: absolute;top: 0.88rem;height: calc(100% - 0.88rem);}
+#content dl{padding: 0.35rem 0;font-size: 0.28rem;}
+#content dl dt{margin-bottom: 0.3rem;}
+#content dl dd p{line-height: 0.4rem;}
+.listGroup{padding:0 0.3rem;}
+.listGroup ul li{overflow: hidden;background-color: #fff;border-bottom-width: 0.01rem;border-bottom-style: solid;}
+.listGroup ul li:last-child{/*border-bottom: none;*/}
+.listGroup ul li>a{overflow: hidden;display: block;width: 100%;height: 100%;}
+.listGroup ul li>a img{float: left;margin-right: 0.3rem;}
+.listGroup ul li>a h2{margin-top: 0.15rem;}
+.listGroup ul li>a p{color: #999999;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.textGroup{background-color: #f5f5f5;min-height: 100%;}
+.textGroup>div{background-color: #fff;margin-bottom: 0.2rem;padding-left:0.3rem;padding-right: 0.3rem;}
+.textGroup>div:last-child{margin-bottom: 0;}
+.textGroup-header{padding-top: 0.48rem;padding-bottom:0.48rem;overflow: hidden;}
+.textGroup-header>img{width: 1.4rem;height: 1.4rem;float: left;margin-right: 0.3rem;}
+.textGroup-header>h2{font-size: 0.36rem;margin: 0.15rem 0;}
+.textGroup-header>h2 span{font-size: 0.26rem;color: #4468d0;margin-left: 0.24rem;}
+.textGroup-header>p{font-size: 0.32rem;color: #999999;border: none;padding: 0;}
+.listGroup ul li a span{ color: #999; }
+.listGroup ul li a:hover span{ color: #4468D0;}
+.listGroup ul li a span i{font-size: 0.5rem;}
+
+/*医院列表*/
+.hospital-list li{padding: 0.4rem 0 0.2rem;border-bottom-color: #e4e4e4;}
+.hospital-list li img{width: 2.2rem;height: 1.7rem; float: left;}
+.hospital-list li h2{font-size: 0.3rem; line-height: 0.7rem;/*height: 1.0rem; line-height: 1rem;*/}
+.hospital-list li p{text-indent:0.4rem;position:relative;font-size: 0.26rem;height: 0.4rem; width: 4.7rem;float: left; margin-top: 0.2rem; line-height: 0.4rem; color: #999;}
+.hospital-list li p:before{content:'';position:absolute;top:-0.1rem;left:0;background-image: url(../images/weizhi.png);background-position:center;background-size:cover;background-repeat:no-repeat;height: 0.4rem;width: 0.4rem;}
+/*2018-04-25*/
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+.hospital-list_btn{
+	background: #FF8533;
+	display: inline-block;
+	text-align: center;
+	letter-spacing: 1px;
+	line-height: 0.7rem;
+	
+	width:1.3rem;
+	height:0.7rem;
+	font-size:0.32rem;
+	color:#fff;
+	border-radius: 0.08rem;
+	border:none;
+	outline: none;
+}
+.hospital-list li h2 .sh_book a{
+	color: #fff;
+	text-align: center;
+}
+.iagree{
+	text-align: center;
+	font-size: 0.25rem;
+	color: #999;
+	position: absolute;
+	bottom: 0.2rem;
+	left: 25%;
+}
+.iagree a{
+	color: #4468D0
+}
+
+
+/*科室列表*/
+.department-list .listGroup{padding: 0;}
+.department-list .wrapper{height: 100%;overflow: hidden;}
+.department-list li{border-bottom-color: transparent;}
+.department-list li.active{color: #4468d0;background-color: #fff!important;}
+.department-list li.active:before{content: "▶";font-size: 0.3rem;color: #4468d0;position: absolute;left: 0.3rem;}
+.department-group_first{width:46%;background-color: #f5f5f5;float: left;height: 100%;}
+.department-group_second{width: 54%;float: left;height: 100%;}
+.department-group_first li{padding: 0.45rem 0.3rem 0.45rem 1rem;background-color: #f5f5f5 !important;}
+.department-group_second li{padding:0.45rem 0.3rem 0.45rem 0.3rem;}
+
+
+
+/*医生列表*/
+.doctor-list li{padding: 0.28rem 0;border-bottom-color: #e4e4e4;}
+.doctor-list li>a img{width: 1.3rem;height: 1.3rem;}
+.doctor-list li>a h2{font-size: 0.36rem;height: 0.54rem;}
+.doctor-list li>a h2 span{font-size: 0.26rem;color: #4468d0;margin-left: 0.24rem;}
+.doctor-list li>a p{font-size: 0.32rem;color: #999999;}
+.doctor-list_btn{float:right;width:1.45rem;height:0.7rem;font-size:0.32rem;margin-top:-0.7rem;color:#fff;border-radius: 0.08rem;border:none;outline: none;}
+.doctor-list_btn.active{background-color: #ff8533;}
+
+
+
+/*医院介绍*/
+.textGroup>div.hospital-introduce_img{position: relative;height: 3.55rem;width: 100%;padding: 0;}
+.hospital-introduce_img img{width: 100%;}
+.hospital-introduce_img h2{width: 100%;color:#fff;position: absolute;bottom:0;font-size: 0.36rem;background: rgba(0,0,0,0.7);padding: 0.3rem;}
+.hospital-introduce_contact{color: #999999;font-size: 0.28rem;}
+.contact_address,.contact_phone{border-bottom: 1px solid #eeeeee;padding: 0.35rem 0;position: relative;text-indent: 0.55rem;}
+.contact_address:before,.contact_phone:before{content:'';position:absolute;top:0.28rem;left:0;background-position:center;background-size:cover;background-repeat:no-repeat;float: left;height: 0.4rem;width: 0.4rem;}
+.contact_address:before{background-image: url(../images/weizhi.png);}
+.contact_phone:before{background-image: url(../images/phone.png);}
+.hospital-introduce_contact .contact_phone{border-bottom: none;}
+.hospital-introduce_detail dt{font-size: 0.34rem;}
+#suspension{position: fixed;border-radius:50%;bottom: 0.9rem;right: 0.5rem;width: 1.28rem;height: 1.28rem;background-image: url(../images/suspension.png);background-position:center ;background-size: cover;}
+#suspension:before{content:"预约挂号";width: 0.8rem;height: 0.8rem;display: block;letter-spacing:0.05rem;margin:0.3rem;font-size: 0.32rem;color: #fff;}
+
+
+
+
+/*预约时间*/
+.appointment-time_adept a{color: #999999;text-align: center;display: block;padding: 0.2rem 0 0.4rem;position: relative;font-size: 0.26rem;}
+.appointment-time_adept a:after{content: "﹀";position: absolute;top: 0.25rem;margin-left:0.15rem;font-size: 0.24rem;}
+.appointment-time_adept dd{height: 1.2rem;hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
+.appointment-time_adept.slide a:after{content: "︿";top: 0.15rem;}
+.slide dd{height: auto;overflow: inherit;display: block;}
+.appointment-time_schedule dd{border: 1px solid #e4e4e4;border-radius: 0.2rem;overflow: hidden;}
+.appointment-time_schedule table{border-color: transparent;}
+.appointment-time_schedule table td,.appointment-time_schedule table th{width: 12.5%;border-color:#e4e4e4;cursor: pointer;height: 1rem;text-align: center;line-height: 0.4rem;font-size: 0.22rem;}
+.appointment-time_schedule table th:nth-child(n+2){background-color: #f5f5f5;}
+.meet{background-color: #ff8533;color: #fff;}
+.full{background-color: #ccc;color: #fff;}
+
+
+
+
+/*确认信息*/
+.appointment-detail_info p{padding: 0.34rem 0;border-bottom: 1px solid #eeeeee;color: #999999;font-size: 0.3rem;}
+.appointment-detail_info p span,.appointment-detail_info p input{color: #000;float: right;}
+.appointment-detail_info p:last-child{border-bottom: none;}
+.appointment-detail_info input{border: none;outline: none;text-align: right;}
+.appointment-detail_prompt{min-height: 4.2rem;}
+.submit{width: 100%;height: 1.2rem;line-height:1.2rem;text-align:center;color: #ffffff;background-color: #4468d0;border: none;outline:none;font-size: 0.36rem;position: fixed;bottom: 0;}
+
+
+
+
+/*预约结果*/
+.appointment-success_prompt{text-align: center;padding-top: 0.6rem;padding-bottom: 0.6rem;0.34rem}
+.appointment-success_prompt a.toHome{width:2.2rem;height:0.9rem;display:block;margin:0.5rem auto 0;line-height:0.9rem;text-align:center;border: 1px solid #4468d0;color: #4468d0;border-radius: 0.08rem;font-size: 0.36rem;}
+.appointment-success_order dl p{line-height: 0.55rem !important;}
+.appointment-success_order dd>div{margin-bottom: 0.2rem;padding-bottom: 0.3rem;border-bottom: 1px solid #eeeeee;}
+.appointment-success_order dd>div:last-child{border-bottom: none;}
+.appointment-success_order dd>div span{float: right;}
+
+
+/*复选框美化*/
+@keyframes hover-color{0%{border-color:silver}
+to{border-color:#3e97eb}
+}
+.magic-checkbox,.magic-radio{position:absolute;display:none}
+.magic-checkbox[disabled],.magic-radio[disabled]{cursor:not-allowed}
+.magic-checkbox+label,.magic-radio+label{position:relative;display:block;padding-left:30px;cursor:pointer;vertical-align:middle}
+.magic-checkbox+label:hover:before,.magic-radio+label:hover:before{animation-duration:.4s;animation-fill-mode:both;animation-name:hover-color}
+.magic-checkbox+label:before,.magic-radio+label:before{position:absolute;top:-3px;left:0;display:inline-block;width:20px;height:20px;content:'';border:1px solid silver}
+.magic-radio+label:before{position:absolute;top:0px;left:0;display:inline-block;width:20px;height:20px;content:'';border:1px solid silver}
+.magic-checkbox+label:after,.magic-radio+label:after{position:absolute;display:none;content:''}
+.magic-checkbox[disabled]+label,.magic-radio[disabled]+label{cursor:not-allowed;color:#e4e4e4}
+.magic-checkbox[disabled]+label:after,.magic-checkbox[disabled]+label:before,.magic-checkbox[disabled]+label:hover,.magic-radio[disabled]+label:after,.magic-radio[disabled]+label:before,.magic-radio[disabled]+label:hover{cursor:not-allowed}
+.magic-checkbox[disabled]+label:hover:before,.magic-radio[disabled]+label:hover:before{border:1px solid #e4e4e4;animation-name:none}
+.magic-checkbox[disabled]+label:before,.magic-radio[disabled]+label:before{border-color:#e4e4e4}
+.magic-checkbox:checked+label:before,.magic-radio:checked+label:before{animation-name:none}
+.magic-checkbox:checked+label:after,.magic-radio:checked+label:after{display:block}
+.magic-radio+label:before{border-radius:50%}
+.magic-radio+label:after{top:7px;left:7px;width:8px;height:8px;border-radius:50%;background:#3e97eb}
+.magic-radio:checked+label:before{border:1px solid #3e97eb}
+.magic-radio:checked[disabled]+label:before{border:1px solid #c9e2f9}
+.magic-radio:checked[disabled]+label:after{background:#c9e2f9}
+.magic-checkbox+label:before{border-radius:3px}
+.magic-checkbox+label:after{top:0px;left:7px;box-sizing:border-box;width:6px;height:9pt;transform:rotate(45deg);border:2px solid #fff;border-top:0;border-left:0}
+.magic-checkbox:checked+label:before{border:#3e97eb;background:#3e97eb}
+.magic-checkbox:checked[disabled]+label:before{border:#c9e2f9;background:#c9e2f9}
+
+
+.clean{ clear: both}
+.time-slot{ display: none;}
+.disease{
+	display: block;
+	width: 80%;
+	height: 1.5rem;
+	margin-top: 0.2rem;
+	margin-left: 20%;
+	border-radius: 5px;
+	border: 1px solid #E4E4E4;
+	
+}
+.doctor-tag{
+
+	border-radius: 0.05rem ;
+	font-size:0.18rem;
+	color:#4468D0;
+	border: 1px solid #4468D0;
+	font-style: normal;
+	padding:0.03rem  0.1rem;
+	margin-left: 0.2rem
+}
+.payment_type{
+	border-bottom: 1px solid #ddd;
+}
+.payment_method{
+	font-size:0.24rem;
+	margin: 0.4rem;
+	color: #999;
+}
+
+.payment_type img{
+	float: left;
+	width: 1rem;
+	height: 1rem;
+}
+
+.payment_description{
+	width:5.28rem;
+	font-size:0.28rem;
+	color: #222;
+	float: left;
+	line-height: 0.44rem;
+	padding: 0.15rem;
+}
+.payment_description img{
+	vertical-align: middle;
+}
+.payment_description span{
+	font-size: 0.24rem;
+	color: #999;
+	display: block;
+}
+
+.view-log-list .view-log-title{
+	font-size:0.32rem;
+	margin-bottom: 0.2rem;
+	color: #222;
+}
+.view-log-list{
+	color: #999;
+}
+.view-log-list div span{
+	color: #222;
+}
+.view-log-list dt i{
+	margin-right: 0.05rem;
+	color: #4468D0;
+	font-size: 0.30rem;
+
+}
+
+.appointment-success_order .view-log-btn{
+	text-align: right;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.view-log-btn a{
+	width:2rem;
+	height:0.7rem;
+	border-radius: 0.05rem ; 
+	border: 1px solid #CCCCCC;
+	display: inline-block;
+	font-size: 0.3rem;
+	text-align: center;
+	line-height: 0.7rem;
+}
+.view-log-btn a:nth-child(2){
+	color: #4468D0;
+	border: 1px solid #4468D0;
+}
+
+.personnel_info{
+	font-size: 0.32rem;
+	color: #222;
+	padding-bottom: 0.15rem;
+}
+.personnel_info span{
+	font-size: 0.26rem;
+	margin-left: 0.15rem;
+}
+.personnel_list{
+	font-size: 0.24rem;
+	color: #999;
+	padding: 0.4rem 0;
+	margin-bottom: 0.2rem;
+}
+.personnel_edit{
+	margin-top: 0.2rem;
+	padding-top: 0.3rem;
+	border-top:1px solid #ccc;
+}
+.personnel_edit span a{
+	margin-left: 0.15rem;
+	font-size: 0.26rem;
+	line-height: 0.36rem;
+}
+.personnel_edit span a i{
+	margin-right: 0.05rem;
+}
+.personnel_edit label{
+	line-height: 0.36rem;
+}
+.submit{
+	line-height: 1.08rem;
+}
+.submit i{
+	font-size: 0.6rem;
+	vertical-align: middle;
+ }
+.add_patients p{
+	color: #222;
+}
+.add_patients p span{
+	float: none;
+	color:#999;
+	width: 1.8rem;
+	display: inline-block;
+}
+.add_patients p span i{
+	font-style: normal;
+	color: #FF3232;
+	padding: 0 0.05rem;
+	
+}
+.relationship{
+	width:1.5rem;
+	height:0.6rem;
+	background:rgba(255,255,255,1);
+	border-radius: 0.05rem ; 
+	text-align: center;
+	color: #999;
+	border: 1px solid #ccc;
+	display: inline-block;
+	line-height: 0.6rem;
+	margin-left: 0.1rem;
+	margin-bottom: 0.2rem;
+}
+.relationship:hover{
+	border: 1px solid #4468D0;
+	color: #4468D0;
+}
+.relationship_link a:nth-child(5){
+	margin-left: 1.90rem
+}
+.doctor-list .doctor_text{
+	font-size: 0.18rem;
+	margin-top: 0.3rem;
+	line-height: 0.33rem;
+	width: 5.27rem;
+	float: right;
+	white-space: normal;
+
+}
+
+.book_time_list{
+	border-bottom: 1px solid #ccc;
+}

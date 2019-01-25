@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>科室列表</title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/font_204671_x9apung3xuwyiudi/iconfont.css" />
+	<link rel="stylesheet" href="../css/layout.css" />
+</head>
+<body>
+	<header>
+		<a href="#" class="iconfont shangyi toPrevious"></a>
+		<h1>选择科室</h1>
+		<!--<a href="#" class="toNext">确定</a>-->
+	</header>
+	<section id="content-special" class="department-list">
+		<div class="wrapper listGroup">
+			<div class="department-group_first">
+				<ul>
+					<li class="active">内科</li>
+					<li>外科</li>
+					<li>妇幼儿科</li>
+					<li>骨科</li>
+					<li>中西医结合科</li>
+					<li>老年病科</li>
+					<li>中医科</li>
+					<li>耳鼻喉科</li>
+					<li>皮肤科</li>
+					<li>超声科</li>
+					<li>孕妇科</li>
+					<li>什么鬼科</li>
+					<li>这科</li>
+					<li>那科</li>
+				</ul>
+			</div>
+			<div class="department-group_second">
+				<ul>
+					<li><a href="selective_doctor.html">内分泌科</a></li>
+					<li><a href="selective_doctor.html">肾内科</a></li>
+					<li><a href="selective_doctor.html">消化内科</a></li>
+					<li><a href="selective_doctor.html">呼吸内科</a></li>
+					<li><a href="selective_doctor.html">心内科</a></li>
+					<li><a href="selective_doctor.html">血液风湿科</a></li>
+					<li><a href="selective_doctor.html">风湿内科</a></li>
+					<li><a href="selective_doctor.html">内分泌科</a></li>
+					<li><a href="selective_doctor.html">肾内科</a></li>
+					<li><a href="selective_doctor.html">消化内科</a></li>
+					<li><a href="selective_doctor.html">呼吸内科</a></li>
+					<li><a href="selective_doctor.html">心内科</a></li>
+					<li><a href="selective_doctor.html">血液风湿科</a></li>
+					<li><a href="selective_doctor.html">风湿内科</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript">
+	var myScroll = new IScroll('.department-group_first', {
+	    mouseWheel: true
+	});
+	var myScroll = new IScroll('.department-group_second', {
+	    mouseWheel: true
+	});
+	$(".department-group_first li").on("click",function(){
+		let index=$(this).index()
+		$(this).addClass("active").siblings().removeClass("active")
+	})
+</script>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>预约时间</title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/font_204671_x9apung3xuwyiudi/iconfont.css" />
+	<link rel="stylesheet" href="../css/layout.css" />
+</head>
+<body>
+	<header>
+		<a href="#" class="iconfont shangyi toPrevious"></a>
+		<h1>预约时间</h1>
+		<!--<a href="#" class="toNext">确定</a>-->
+	</header>
+	<section id="content" class="appointment-time">
+		<div class="wrapper textGroup">
+			<div class="textGroup-header">
+				<img src="../images/headphoto1.png"/>
+				<h2>王存兰<span>主任医师</span><i class="doctor-tag">专家</i></h2>
+				<p>主任医师</p>
+			</div>
+			<div class="appointment-time_adept">
+				<dl>
+					<dt>擅长</dt>
+					<dd>
+						<p>
+							甲状腺疾病、糖尿病、垂体性疾病、内分泌性不孕症，
+						特别擅长于结合国内外最新动态采用中西医方法治疗甲状腺氨疾病，
+						重度突眼等内分泌疑难杂症收效显著。另...
+						甲状腺疾病、糖尿病、垂体性疾病、内分泌性不孕症，
+						特别擅长于结合国内外最新动态采用中西医方法治疗甲状腺氨疾病，
+						重度突眼等内分泌疑难杂症收效显著。另...
+						</p>
+					</dd>
+				</dl>
+				<a href="#" class="collection">展开全部&nbsp;</a>
+			</div>
+			<div class="appointment-time_adept">
+				<dl>
+					<dt>擅长</dt>
+					<dd>
+						<p>
+							甲状腺疾病、糖尿病、垂体性疾病、内分泌性不孕症，
+						特别擅长于结合国内外最新动态采用中西医方法治疗甲状腺氨疾病，
+						重度突眼等内分泌疑难杂症收效显著。另...
+						甲状腺疾病、糖尿病、垂体性疾病、内分泌性不孕症，
+						特别擅长于结合国内外最新动态采用中西医方法治疗甲状腺氨疾病，
+						重度突眼等内分泌疑难杂症收效显著。另...
+						</p>
+					</dd>
+				</dl>
+				<a href="#" class="collection">展开全部&nbsp;</a>
+			</div>
+			<div class="appointment-time_schedule">
+				<dl>
+					<dt>预约时间</dt>
+					<dd>
+						<table border="1" cellspacing="0" cellpadding="0">
+							<tr>
+								<th>时段</th>
+								<th>12/03 今天</th>
+								<th>12/04 明天</th>
+								<th>12/05 后天</th>
+								<th>12/06 周二</th>
+								<th>12/07 周三</th>
+								<th>12/08 周四</th>
+								<th>12/08 周五</th>
+							</tr>
+							<tr>
+								<td>上午</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="full">约满</td>
+								<td class="full">约满</td>
+								<td class="meet">预约号源20</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>下午</td>
+								<td class="meet">预约号源20</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="meet">预约号源20</td>
+								<td class="full">约满</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>夜诊</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</dd>
+				</dl>
+			</div>
+			<div class="appointment-time_prompt">
+				<dl>
+					<dt>预约规则</dt>
+					<dd>
+						<p>1、预约成功后请在当天准时到院就诊</p>
+						<p>2、如果取消或变更预约，请在就诊前一天取消，不可重复预约同一科室</p>
+						<p>3、当月取消预约超过三次，将无法再进行挂号操作。</p>
+					</dd>
+				</dl>
+			</div>
+			
+		</div>
+		<div class="time-slot">123</div>
+	</section>
+</body>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript">
+	$(".meet").click(function(){
+		$(".time-slot").toggle(true);
+	})
+	$(".collection").click(function(){
+		let dl = $(this).parent(".appointment-time_adept")
+		if(dl.hasClass("slide")){
+			dl.removeClass("slide")
+			$(this).html("展开全部")
+		}else{
+			dl.addClass("slide")
+			$(this).html("收起")
+		}
+		var myScroll = new IScroll('#content', {
+			mouseWheel: true
+		});
+	})
+</script>
+</html>

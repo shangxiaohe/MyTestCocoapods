@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>缴费查询</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/font_204671_19b2d7ji42aqncdi/iconfont.css"/>
+</head>
+<body>
+	<div id="main">
+		<header>
+			<i onClick="back();" class="iconfont icon-arrow-left"></i>缴费查询
+		</header>
+		<section id="container">
+			<div class="payment_search container_wrapper">
+				<ul id="all" class="search_list">
+					
+				</ul>
+			</div>
+		</section>
+	</div>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/public.js"></script>
+<script type="text/javascript"  src="../js/jquery.cookie.js"></script>
+
+<script>
+var id = "";
+var orderNumber = "";
+function back(){
+window.history.go(-1);
+}
+
+$(document).ready(function(e) {
+$.ajaxSetup({ 
+    async : false 
+});        
+
+	var bdnum=GetQueryString("bdnum");//获取当前输入框中受理编号的值
+	var phone=GetQueryString("phone");//获取当前输入框中电话的值
+    var url=getDonmin()+"paymentRecordsController.do?queyPay"+"&busyDealNumber="+bdnum+"&phone="+phone;
+$.get(url,function(data){//访问成功则调用内部的值
+
+			var json=getjson(data);//由于返回的内容为字符串,所以需要转换为json对象才可以读取内容
+			if(json.state=="1"){//如果返回的对象state为1,则打印后台提示
+				alert(json.message);
+				}else{//如果返回的对象state不为-1,则绑定成功,打印后台提示并执行跳转页面操作
+		var search_info = "";//总数据拼接容器
+		var blist = "";//子列表容器
+		id = json.result.id;
+		orderNumber = json.result.orderNumber;
+		//受理编号
+		search_info += '<li><div class="search_list_header"><p class="payment_search_number"><i class="iconfont wendangshuoming"></i>'+json.result.orderNumber+'</p>';
+		//是否缴费
+		 if(json.result.paymentStatus==0){//未交费
+			search_info += '<p class="payment_search_state">未缴费</p>';
+			}else{//已缴费
+			search_info += '<p class="payment_search_state">已缴费</p>';
+			}
+		//缴费名称
+		search_info += '</div><div class="search_list_container"><p class="payment_search_name"><span>'+json.result.busiitemName+'</span></p><div class="payment_search_detail">';
+		//循环并拼接子项目
+		 var sp=json.result.subprojectCharge.split("|");
+		 $.each(sp,function(result,info)
+		 {
+		 var spinfo=info.split(",");
+		 if(spinfo[2]!=null&&spinfo[3]!=null){
+		blist += '<p><span>'+spinfo[2]+'</span><i>¥ '+spinfo[3]+'</i></p>'
+		}
+		 });
+		 search_info +=blist;
+		 //总金额拼接->详情跳转监听
+		search_info += '<p class="amountTotal"><span>总计应收</span><i>¥ '+json.result.money+'</i></p></div></div><div class="search_list_footer"><a href="" onClick="detail();return false;">查看详情</a> ';
+		//是否需要缴费按钮
+		if(json.result.paymentStatus==0){//未交费->微信支付
+			search_info += '<a class="not_payment" href="" onClick="pay();return false;">立即缴费</a></div></li>';
+			}else{//已缴费
+			search_info += '</div></li>';
+			}
+			//输出页面
+			$("#all").html(search_info);
+			
+	
+				
+					}
+});
+
+})
+
+function detail(){
+	window.location.href = 'payment_detail.html?id='+id;
+}
+function pay(){
+	var openid='oz7Rkwv_-sf_6PJG04TBMf7QJkEw';//$.cookie('wxid');//从Cookies里面获取openid
+	var url = getDonmin()+"paymentRecordsController.do?payOrderBillInfo" + "&id=" + id + "&openid=" + openid;
+	
+	$.get(url,function(data){
+		var json=getjson(data);//由于返回的内容为字符串,所以需要转换为json对象才可以读取内容
+			if(json.state=="1"){//如果返回的对象state为1,则打印后台提示
+				alert(json.message);
+				}else{
+					alert(json.message);
+					function onBridgeReady(){
+						WeixinJSBridge.invoke(
+						    'getBrandWCPayRequest', {
+                            "appId":json.appid,     //公众号名称，由商户传入     
+                            "timeStamp":json.timestamp,         //时间戳，自1970年以来的秒数     
+                            "nonceStr":json.noncestr, //随机串     
+                            "package":"prepay_id="+ json.prepayid,     
+                            "signType":"MD5",         //微信签名方式：     
+                            "paySign":json.sign //微信签名 
+                             },
+							 function(res){
+
+                                if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+
+                   //doit 这里处理支付成功后的逻辑，通常为页面跳转
+
+                                }
+							 }
+							 
+						  );
+					}
+					if(typeof WeixinJSBridge == "undefined"){
+						if(document.addEventListener){
+							document.addEventListener("WeixinJSBridge",onBridgeReady,false);
+						}else if(document.attachEvent){
+							document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+							document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+						}
+							
+					}else{
+						onBridgeReady();
+					}
+				}
+		
+	});
+}
+
+</script>
+</html>

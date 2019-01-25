@@ -12,6 +12,7 @@
 		7355044E219E4F1000661E0D /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7355044D219E4F1000661E0D /* TwoViewController.m */; };
 		735933312149FC820062891F /* ModelOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 735933302149FC820062891F /* ModelOne.m */; };
 		738C09C221410B0000EF0231 /* CALayer+Cgcolor.m in Sources */ = {isa = PBXBuildFile; fileRef = 738C09C121410B0000EF0231 /* CALayer+Cgcolor.m */; };
+		7395AEC721F83AC10026ABA9 /* DataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7395AEC621F83AC10026ABA9 /* DataObject.m */; };
 		73A08F36216DC7B400D2C5AD /* NSDictionary+deleteNullValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A08F35216DC7B400D2C5AD /* NSDictionary+deleteNullValue.m */; };
 		73A08F39216DDE7400D2C5AD /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A08F38216DDE7400D2C5AD /* NSDictionary+Safe.m */; };
 		73A08F3C216DED6500D2C5AD /* UIImage+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A08F3B216DED6500D2C5AD /* UIImage+safe.m */; };
@@ -54,6 +55,8 @@
 		735933302149FC820062891F /* ModelOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelOne.m; sourceTree = "<group>"; };
 		738C09C021410B0000EF0231 /* CALayer+Cgcolor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Cgcolor.h"; sourceTree = "<group>"; };
 		738C09C121410B0000EF0231 /* CALayer+Cgcolor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Cgcolor.m"; sourceTree = "<group>"; };
+		7395AEC521F83AC10026ABA9 /* DataObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataObject.h; sourceTree = "<group>"; };
+		7395AEC621F83AC10026ABA9 /* DataObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataObject.m; sourceTree = "<group>"; };
 		73A08F34216DC7B400D2C5AD /* NSDictionary+deleteNullValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+deleteNullValue.h"; sourceTree = "<group>"; };
 		73A08F35216DC7B400D2C5AD /* NSDictionary+deleteNullValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+deleteNullValue.m"; sourceTree = "<group>"; };
 		73A08F37216DDE7300D2C5AD /* NSDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Safe.h"; sourceTree = "<group>"; };
@@ -141,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				73A08F3D216DEE0300D2C5AD /* 111.jpg */,
-				73DED5CC213E15610014BEF7 /* ViewController.m */,
 				73DED5CB213E15610014BEF7 /* ViewController.h */,
+				73DED5CC213E15610014BEF7 /* ViewController.m */,
 				73DED5C8213E15610014BEF7 /* AppDelegate.h */,
 				73DED5C9213E15610014BEF7 /* AppDelegate.m */,
 				730F0E7021EF185C00803C6C /* Antilnjection.m */,
@@ -150,6 +153,8 @@
 				73BEDA93216CB15200C5FF7F /* OneViewController.m */,
 				7355044C219E4F1000661E0D /* TwoViewController.h */,
 				7355044D219E4F1000661E0D /* TwoViewController.m */,
+				7395AEC521F83AC10026ABA9 /* DataObject.h */,
+				7395AEC621F83AC10026ABA9 /* DataObject.m */,
 				73A08F37216DDE7300D2C5AD /* NSDictionary+Safe.h */,
 				73A08F38216DDE7400D2C5AD /* NSDictionary+Safe.m */,
 				73A08F3A216DED6500D2C5AD /* UIImage+safe.h */,
@@ -348,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7395AEC721F83AC10026ABA9 /* DataObject.m in Sources */,
 				73DED5CD213E15610014BEF7 /* ViewController.m in Sources */,
 				735933312149FC820062891F /* ModelOne.m in Sources */,
 				73A08F36216DC7B400D2C5AD /* NSDictionary+deleteNullValue.m in Sources */,
@@ -526,6 +532,7 @@
 			baseConfigurationReference = 66AEAAF8ABFF019F2AAC9DC7 /* Pods-TestProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBM7426KPU;
 				ENABLE_BITCODE = YES;
@@ -537,6 +544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lixianliang.com.TestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -546,6 +554,7 @@
 			baseConfigurationReference = F99E12DFD81C994430DAF1DB /* Pods-TestProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBM7426KPU;
 				ENABLE_BITCODE = YES;
@@ -557,6 +566,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lixianliang.com.TestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

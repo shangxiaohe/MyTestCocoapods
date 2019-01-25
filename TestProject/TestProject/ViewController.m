@@ -51,8 +51,17 @@
     }
     
     
-    NSLog(@"ddd");
+   
+    NSString *str = @"[1]";
+    NSString *str1 = @"[1,2,3]";
     
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data2 = [str1 dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSArray *arr1 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSArray *arr2 = [NSJSONSerialization JSONObjectWithData:data2 options:kNilOptions error:nil];
+    
+    NSLog(@" arr1 : %@,  arr2 :%@",arr1,arr2);
     
 }
 

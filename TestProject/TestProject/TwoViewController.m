@@ -8,6 +8,7 @@
 
 #import "TwoViewController.h"
 #import "MBProgressHUD.h"
+#import "DataObject.h"
 
 #define STRING_NULL(str) (([str isKindOfClass:[NSNull class]] || str == nil ) ? @"":str)
 
@@ -15,6 +16,7 @@
 
 @property (nonatomic, strong)UIButton *button;
 @property (nonatomic, strong)UIView *view1;
+@property (nonatomic, strong) NSMutableDictionary *dictionary;
 
 @end
 
@@ -36,15 +38,8 @@
 //    });
     
     
-    dispatch_queue_t queue = dispatch_queue_create("aaa", DISPATCH_QUEUE_SERIAL);
     
-    dispatch_async(queue, ^{
-        NSLog(@"[cloud] 1  %@",[NSThread currentThread]);
-        dispatch_sync(queue, ^{
-            sleep(1);
-            NSLog(@"[cloud] 2  %@",[NSThread currentThread]);
-        });
-    });
+    
     
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -71,7 +66,11 @@
     NSLog(@"aa = %@ , bb = %@",aa,bb);
 
     
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(200, 300, 60, 60)];
+    button.backgroundColor = [UIColor purpleColor];
+    [view11 addSubview:button];
 
+    [button addTarget:self action:@selector(buttonPressedTwo:) forControlEvents:UIControlEventTouchUpInside];
     
     
     CGFloat effectOffset = 10.f;
@@ -101,6 +100,24 @@
     hud.label.textColor = UIColor.whiteColor;
     hud.label.text = @"加载中。。。。";
     hud.label.numberOfLines = 0;
+    
+    
+    self.dictionary = [NSMutableDictionary dictionary];
+    
+    DataObject *object = [[DataObject alloc]init];
+    
+    [self.dictionary setObject:object forKey:@"object"];
+    
+    [object messageSend:^(NSString *messgae) {
+        NSLog(@"message: %@",messgae);
+    }];
+}
+
+- (void)buttonPressedTwo:(UIButton *)sender {
+    
+    DataObject *objectone;
+    objectone = [self.dictionary objectForKey:@"object"];
+    [objectone blockAction];
 }
 
 @end

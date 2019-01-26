@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "XHE_mytest"
-  spec.version      = "1.0.0"
-  spec.summary      = "A short description of XHE_mytest."
+  spec.version      = "1.0.4"
+  spec.summary      = "私人的"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/shangxiaohe/MyTestCocoapods.git", :tag => "1.0.0" }
+  spec.source       = { :git => "https://github.com/shangxiaohe/MyTestCocoapods.git", :tag => "1.0.4" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -130,7 +130,8 @@ Pod::Spec.new do |spec|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # spec.requires_arc = true
+  spec.requires_arc = false
+  spec.requires_arc = ["TwoTest/*.m"]
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"

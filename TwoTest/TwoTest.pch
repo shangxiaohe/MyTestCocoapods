@@ -19,4 +19,10 @@
 
 #define AABB app(@"ff",ASSCEE)
 
+
+#define BACKCOLOR(color1,color2,color3) [UIColor colorWithRed:color1/255.0 green:color2/255.0 blue:color3/255.0 alpha:1.0]
+#define FRAMGE(x,y,width,heigt) CGRectMake(x,y,width,heigt)
+#define POINT(x,y) CGPointMake(x, y)
+#define value(xa,xb,xc,xd) @[[NSValue valueWithCGRect:xa],xb,[NSValue valueWithCGPoint:xc],[NSNumber numberWithInteger:xd]]
+
 #endif /* TwoTest_pch */

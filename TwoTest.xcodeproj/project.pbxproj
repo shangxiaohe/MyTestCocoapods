@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7320D41B21FFEBCF00908EB2 /* EighteenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7320D41A21FFEBCF00908EB2 /* EighteenViewController.m */; };
+		7320D41E21FFF7CD00908EB2 /* ObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7320D41D21FFF7CD00908EB2 /* ObjectView.m */; };
+		738DE49322017FD20031B9EA /* NineteenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 738DE49222017FD20031B9EA /* NineteenViewController.m */; };
 		A5016EEC1E7F7C2700A6C0FB /* ShareExple.m in Sources */ = {isa = PBXBuildFile; fileRef = A5016EEB1E7F7C2700A6C0FB /* ShareExple.m */; };
 		A5024E241E961F53005EBF0C /* NineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5024E231E961F53005EBF0C /* NineViewController.m */; };
 		A509F8512064CB30006F1713 /* SixteenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A509F8502064CB30006F1713 /* SixteenViewController.m */; };
@@ -142,6 +145,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7320D41921FFEBCF00908EB2 /* EighteenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EighteenViewController.h; sourceTree = "<group>"; };
+		7320D41A21FFEBCF00908EB2 /* EighteenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EighteenViewController.m; sourceTree = "<group>"; };
+		7320D41C21FFF7CD00908EB2 /* ObjectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectView.h; sourceTree = "<group>"; };
+		7320D41D21FFF7CD00908EB2 /* ObjectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectView.m; sourceTree = "<group>"; };
+		738DE49122017FD20031B9EA /* NineteenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NineteenViewController.h; sourceTree = "<group>"; };
+		738DE49222017FD20031B9EA /* NineteenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NineteenViewController.m; sourceTree = "<group>"; };
 		A5016EEA1E7F7C2700A6C0FB /* ShareExple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareExple.h; sourceTree = "<group>"; };
 		A5016EEB1E7F7C2700A6C0FB /* ShareExple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareExple.m; sourceTree = "<group>"; };
 		A5024E221E961F53005EBF0C /* NineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NineViewController.h; sourceTree = "<group>"; };
@@ -470,6 +479,12 @@
 				A509F8502064CB30006F1713 /* SixteenViewController.m */,
 				A571C0B820C130060062B187 /* SeventeenViewController.h */,
 				A571C0B920C130060062B187 /* SeventeenViewController.m */,
+				7320D41921FFEBCF00908EB2 /* EighteenViewController.h */,
+				7320D41A21FFEBCF00908EB2 /* EighteenViewController.m */,
+				738DE49122017FD20031B9EA /* NineteenViewController.h */,
+				738DE49222017FD20031B9EA /* NineteenViewController.m */,
+				7320D41C21FFF7CD00908EB2 /* ObjectView.h */,
+				7320D41D21FFF7CD00908EB2 /* ObjectView.m */,
 				A50DBAA720D367850078B62A /* Singleton.h */,
 				A50DBAA820D367850078B62A /* Singleton.m */,
 				A56454771E715A460096718C /* WebObject.h */,
@@ -1128,6 +1143,7 @@
 				A53975422011F2090099155E /* LFMovingView.m in Sources */,
 				A539752E2011F2090099155E /* LFVideoEditingController.m in Sources */,
 				A517AC761E8CF89B00251AD2 /* EightViewController.m in Sources */,
+				7320D41E21FFF7CD00908EB2 /* ObjectView.m in Sources */,
 				A53975262011F2090099155E /* UIDevice+LFMEOrientation.m in Sources */,
 				A539752F2011F2090099155E /* LFVideoEdit.m in Sources */,
 				A5F055991E163B770065DEF2 /* ThreeViewController.m in Sources */,
@@ -1155,6 +1171,7 @@
 				A53975352011F2090099155E /* LFVideoTrimmerGridLayer.m in Sources */,
 				A53975402011F2090099155E /* LFGridView.m in Sources */,
 				A5CD14341E1B4ACF00258A77 /* FourViewController.m in Sources */,
+				7320D41B21FFEBCF00908EB2 /* EighteenViewController.m in Sources */,
 				A571C0BA20C130060062B187 /* SeventeenViewController.m in Sources */,
 				A539754B2011F20A0099155E /* LFText.m in Sources */,
 				A539753A2011F2090099155E /* LFClippingView.m in Sources */,
@@ -1170,6 +1187,7 @@
 				A571C0B420C1220D0062B187 /* PieBarChartView.m in Sources */,
 				A53975272011F2090099155E /* NSString+LFMECoreText.m in Sources */,
 				A53975372011F2090099155E /* LFVideoTrimmerView.m in Sources */,
+				738DE49322017FD20031B9EA /* NineteenViewController.m in Sources */,
 				A53975282011F2090099155E /* UIView+LFMECommon.m in Sources */,
 				A53975392011F2090099155E /* LFPhotoEdit.m in Sources */,
 				A53975322011F2090099155E /* LFAudioTrackBar.m in Sources */,
@@ -1339,7 +1357,7 @@
 				INFOPLIST_FILE = TwoTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dingyi.TwoTest;
+				PRODUCT_BUNDLE_IDENTIFIER = dingyi.TwoTest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1354,7 +1372,7 @@
 				INFOPLIST_FILE = TwoTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dingyi.TwoTest;
+				PRODUCT_BUNDLE_IDENTIFIER = dingyi.TwoTest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -17,6 +17,8 @@
     NSArray *tagArr;
     NSInteger afterTag;//记录最后被设置成绿色的按钮tag;
     NSInteger level;
+    
+    BOOL _isSuccess;
 }
 
 @end
@@ -25,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _isSuccess = NO;
     level = 0;
     colorRed  = [UIImage imageNamed:@"red.jpg"];
     colorGreen = [UIImage imageNamed:@"green.jpg"];

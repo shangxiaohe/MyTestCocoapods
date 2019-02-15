@@ -9,6 +9,7 @@
 #import "FourViewController.h"
 #import "NewButton.h"
 #import "FiveViewController.h"
+#import "EighteenViewController.h"
 
 @interface FourViewController ()
 {
@@ -58,7 +59,7 @@
 - (IBAction)buttonp:(UIButton *)sender {
     if(sender.tag == 10010)
     {
-        FiveViewController *fourVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FiveViewController"];
+        EighteenViewController *fourVC = [[EighteenViewController alloc]init];//[self.storyboard instantiateViewControllerWithIdentifier:@"FiveViewController"];
         [self presentViewController:fourVC animated:YES completion:nil];
     }
     [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];

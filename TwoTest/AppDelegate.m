@@ -17,6 +17,8 @@
 #import "ThirteenViewController.h"
 #import "FourteenViewController.h"
 #import "SeventeenViewController.h"
+#import "EighteenViewController.h"
+#import "NineteenViewController.h"
 
 
 @interface AppDelegate ()
@@ -32,7 +34,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"ViewController"]];
+    //[self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"ViewController"]];
+    [self.window setRootViewController:[[NineteenViewController alloc]init]];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -64,5 +67,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    
+    if (_allowRotation == YES) {
+        
+        return UIInterfaceOrientationMaskLandscapeLeft;
+        
+    }else{
+        
+        return (UIInterfaceOrientationMaskPortrait);
+        
+    }
+}
 
 @end
